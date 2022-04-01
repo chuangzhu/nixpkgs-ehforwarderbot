@@ -1,0 +1,30 @@
+From 8a507273417b84e3377c5bf8716aad4c07d52fa6 Mon Sep 17 00:00:00 2001
+From: Chuang Zhu <git@chuang.cz>
+Date: Mon, 28 Mar 2022 09:38:15 +0800
+Subject: [PATCH] disable ffmpeg installation check
+
+---
+ efb_telegram_master/wizard.py | 7 -------
+ 1 file changed, 7 deletions(-)
+
+diff --git a/efb_telegram_master/wizard.py b/efb_telegram_master/wizard.py
+index 029320f..1e19136 100644
+--- a/efb_telegram_master/wizard.py
++++ b/efb_telegram_master/wizard.py
+@@ -589,13 +589,6 @@ def setup_rpc(data):
+ 
+ 
+ def prerequisites_check():
+-    print(_("Checking ffmpeg installation..."), end="", flush=True)
+-    if shutil.which('ffmpeg') is None:
+-        print(_("FAILED"))
+-        print_wrapped(_("ffmpeg is not found in current $PATH."))
+-        exit(1)
+-    print(_("OK"))
+-
+     print(_("Checking libmagic installation..."), end="", flush=True)
+     try:
+         import magic
+-- 
+2.35.1
+
