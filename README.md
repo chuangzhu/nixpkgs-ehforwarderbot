@@ -10,7 +10,7 @@ Add `overlay.nix` into `nixpkgs.overlays` and import `module.nix` in your config
 {
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
-    ehforwarderbot.url = "/home/chuang/Documents/nixpkgs-ehforwarderbot";
+    ehforwarderbot.url = "github:chuangzhu/nixpkgs-ehforwarderbot";
   };
 
   outputs = { self, nixpkgs, ehforwarderbot}: {
